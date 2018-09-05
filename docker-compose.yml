@@ -1,0 +1,15 @@
+version: '3.4'
+services:
+
+  page:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    environment:
+      page_title: title
+      page_description: description
+      page_author: author
+      page_header: header
+      page_summary: summary
+    ports:
+      - 9666:80
