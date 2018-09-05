@@ -1,18 +1,24 @@
+const path = require('path')
 const express = require('express')
-const fs = require('fs')
+const mustacheExpress = require('mustache-express')
+
 const app = express()
 
-const html = fs.readFileSync('index.html', 'utf8')
+app.engine('mustache', mustacheExpress())
 
+app.set('view engine', 'mustache')
+app.set('views', path.join(__dirname, '/'))
 
-app.get('/', (req, res) => res.send(html))
+app.get('/', function (req, res) {
+  res.render('index', {
+    title: process.env.PAGE_TITLE,
+    description: process.env.PAGE_DESCRIPTION,
+    author: process.env.PAGE_AUTHOR,
+    header: process.env.PAGE_HEADER,
+    summary: process.env.PAGE_SUMMARY
+  })
+})
 
 app.use(express.static(__dirname))
 
 app.listen(80, () => console.log('Example app listening on port 80!'))
-
-console.log("page_title", process.env.page_title)
-console.log("page_description", process.env.page_description)
-console.log("page_author", process.env.page_author)
-console.log("page_header", process.env.page_header)
-console.log("page_summary", process.env.page_summary)
