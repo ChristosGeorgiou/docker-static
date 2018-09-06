@@ -6,10 +6,10 @@ services:
       context: .
       dockerfile: Dockerfile
     environment:
-      PAGE_TITLE: example_title
-      PAGE_DESCRIPTION: example_description
-      PAGE_AUTHOR: example_author
-      PAGE_HEADER: example_header
-      PAGE_SUMMARY: example_summary
+      HTML_TITLE: example_title
+      HTML_DESCRIPTION: example_description
+      HTML_AUTHOR: example_author
+      HTML_HEADER: example_header
+      HTML_SUMMARY: example_summary
     ports:
       - 9666:80
