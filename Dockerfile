@@ -1,4 +1,5 @@
 FROM nginx:stable-alpine
+EXPOSE 80
 RUN apk add --no-cache curl
 RUN curl -sLo /usr/local/bin/ep https://github.com/kreuzwerker/envplate/releases/download/v0.0.8/ep-linux && chmod +x /usr/local/bin/ep
 COPY src /usr/share/nginx/html
