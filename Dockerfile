@@ -7,10 +7,10 @@ WORKDIR /app
 
 RUN npm install
 
-ENV TITLE ${TITLE:-none}
-ENV SUBTITLE ${SUBTITLE:-none}
-ENV DESCRIPTION ${DESCRIPTION:-none}
-ENV AUTHOR ${AUTHOR:-none}
+ENV TITLE="\${TITLE:-none}"
+ENV SUBTITLE="\${SUBTITLE:-none}"
+ENV DESCRIPTION="\${DESCRIPTION:-none}"
+ENV AUTHOR="\${AUTHOR:-none}"
 
 RUN npm run build
 
