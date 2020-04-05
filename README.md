@@ -7,7 +7,7 @@ This a simple landing page generator for docker. It uses [envplate](https://gith
 With `docker`
 
 ````bash
-docker run --name landing -e TITLE=mysite -e DESCRIPTION=mysite -e AUTHOR=me -p 80:80 -d cgeosoft/landing
+docker run --name landing -e TITLE=mysite -e SUBTITLE=mysite -e DESCRIPTION=mysite -e AUTHOR=me -p 80:80 -d cgeosoft/landing
 ````
 
 or with `docker-compose`
@@ -21,6 +21,7 @@ services:
       - "80:80"
     environment:
       TITLE: example_title
+      SUBTITLE: example_subtitle
       DESCRIPTION: example_description
       AUTHOR: example_author
 ````
