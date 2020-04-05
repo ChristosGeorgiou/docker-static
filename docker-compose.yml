@@ -7,6 +7,7 @@ services:
       dockerfile: Dockerfile
     environment:
       TITLE: example_title
+      SUBTITLE: example_author
       DESCRIPTION: example_description
       AUTHOR: example_author
     ports:

@@ -1,0 +1,24 @@
+{
+  "name": "landing",
+  "version": "1.0.0",
+  "description": "This a simple landing page generator for docker. It uses [envplate](https://github.com/kreuzwerker/envplate) to replace in run time string in html templates with enviroment variables. The current template (one for the moment) is based on the [skeleton](http://getskeleton.com/) boilerplate.",
+  "main": "build.js",
+  "scripts": {
+    "build": "node build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ChristosGeorgiou/landing.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ChristosGeorgiou/landing/issues"
+  },
+  "homepage": "https://github.com/ChristosGeorgiou/landing#readme",
+  "dependencies": {
+    "dotenv": "^8.2.0",
+    "yargs": "^15.3.1"
+  }
+}
