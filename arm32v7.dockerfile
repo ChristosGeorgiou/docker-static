@@ -1,5 +1,7 @@
 FROM arm32v7/node:12-alpine
 
+COPY qemu-arm-static /usr/bin
+
 ENV NODE_ENV production
 
 COPY . /app
