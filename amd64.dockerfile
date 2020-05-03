@@ -13,4 +13,5 @@ ENV DESCRIPTION="\${DESCRIPTION:-none}"
 ENV AUTHOR="\${AUTHOR:-none}"
 
 EXPOSE 3000
-RUN npm start
+
+CMD [ "npm", "start" ]
