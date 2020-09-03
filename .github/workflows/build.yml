@@ -23,15 +23,6 @@ jobs:
             ${{ runner.os }}-buildx-
       - name: Set tag env
         run: echo ::set-env name=RELEASE_VERSION::${GITHUB_REF#refs/*/}
-      # - name: Docker Buildx (build)
-      #   run: |
-      #     docker buildx build \
-      #       --cache-from "type=local,src=/tmp/.buildx-cache" \
-      #       --cache-to "type=local,dest=/tmp/.buildx-cache" \
-      #       --platform linux/386,linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64 \
-      #       --output "type=image,push=false" \
-      #       --tag cgeosoft/landing:latest \
-      #       --file ./Dockerfile ./
       - name: Login to DockerHub
         uses: docker/login-action@v1
         with:
