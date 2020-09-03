@@ -17,12 +17,12 @@ app.set("view engine", ".hbs");
 
 app.use(helmet());
 
-// create a write stream (in append mode)
-var accessLogStream = fs.createWriteStream(path.join(__dirname, "access.log"), {
+const logsDir = path.join(__dirname, "logs");
+fs.mkdirSync(logsDir, { recursive: true });
+var accessLogStream = fs.createWriteStream(path.join(logsDir, "access.log"), {
   flags: "a",
 });
 
-// setup the logger
 app.use(morgan("combined", { stream: accessLogStream }));
 
 app.get("/", (req, res) => {
