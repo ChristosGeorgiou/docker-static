@@ -1,7 +1,7 @@
 const express = require("express");
 const helmet = require("helmet");
 const dotenv = require("dotenv");
-const expressHandlebars = require("express-handlebars");
+const {engine} = require("express-handlebars");
 const morgan = require("morgan");
 const fs = require("fs");
 const path = require("path");
@@ -13,7 +13,7 @@ const port = 3000;
 
 app.engine(
   ".hbs",
-  expressHandlebars({
+  engine({
     extname: ".hbs",
   })
 );

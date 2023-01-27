@@ -2,27 +2,23 @@
   "name": "landing",
   "version": "1.0.0",
   "description": "This a simple landing page",
-  "main": "index.js",
+  "author": {
+    "name": "Christos Georgiou",
+    "email": "christos@cgeosoft.com",
+    "url": "https://cgeosoft.com"
+  },
+  "private": true,
+  "license": "NONE",
   "scripts": {
     "start": "node ."
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/ChristosGeorgiou/landing.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/ChristosGeorgiou/landing/issues"
-  },
-  "homepage": "https://github.com/ChristosGeorgiou/landing#readme",
+  "main": "index.js",
   "dependencies": {
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "express-handlebars": "^5.1.0",
-    "handlebars": "^4.7.6",
-    "helmet": "^4.1.0",
+    "dotenv": "^16.0.3",
+    "express": "^4.18.2",
+    "express-handlebars": "^6.0.7",
+    "handlebars": "^4.7.7",
+    "helmet": "^6.0.1",
     "morgan": "^1.10.0"
   }
 }
