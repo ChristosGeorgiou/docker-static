@@ -13,6 +13,3 @@ npm version $NEW_VERSION
 git add .
 git commit -m "Release v$NEW_VERSION"
 git push
-
-git tag v$NEW_VERSION main
-git push --tags
