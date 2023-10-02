@@ -1,6 +1,6 @@
 {
   "name": "landing",
-  "version": "2.1.0",
+  "version": "2.2.0",
   "description": "This a simple landing page",
   "main": "index.js",
   "scripts": {
