@@ -1,0 +1,38 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/fork-awesome/1.2.0/css/fork-awesome.min.css");
+@import url("https://fonts.googleapis.com/css2?family=Fira+Mono&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+
+  li a,
+  p a {
+    @apply underline underline-offset-4 text-white;
+  }
+
+  .container {
+    @apply max-w-2xl px-0;
+  }
+
+  .prose :where(strong):not(:where([class~="not-prose"] *)) {
+    color: var(--tw-prose);
+  }
+
+  .prose img {
+    @apply rounded border border-neutral-700 mx-auto shadow;
+  }
+
+  .header{
+    @apply space-y-6 p-6 border-b border-neutral-700;
+  }
+
+  .content{
+    @apply space-y-6 p-6;
+  }
+
+  .footer{
+    @apply border-t border-neutral-100;
+  }
+}

@@ -4,7 +4,12 @@
   "description": "This a simple landing page",
   "main": "index.js",
   "scripts": {
-    "start": "node ."
+    "start": "run-p dev:*",
+    "dev:tailwind": "tailwind build -i ./styles/style.css -o ./static/style.css --watch",
+    "dev:serve": "node .",
+    "start:prod": "node dist/main",
+    "build": "run-s build:*",
+    "build:tailwind": "tailwind build -i ./styles/style.css -o ./static/style.css"
   },
   "repository": {
     "type": "git",
@@ -18,11 +23,15 @@
   },
   "homepage": "https://github.com/ChristosGeorgiou/landing#readme",
   "dependencies": {
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "express-handlebars": "^5.1.0",
-    "handlebars": "^4.7.6",
-    "helmet": "^4.1.0",
-    "morgan": "^1.10.0"
+    "@tailwindcss/typography": "^0.5.10",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-handlebars": "^7.1.2",
+    "handlebars": "^4.7.8",
+    "helmet": "^7.0.0",
+    "morgan": "^1.10.0",
+    "npm-run-all": "^4.1.5",
+    "pug": "^3.0.2",
+    "tailwindcss": "^3.3.3"
   }
 }

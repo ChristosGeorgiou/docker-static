@@ -2,3 +2,5 @@ node_modules/*
 logs/*
 .env*
 !.gitkeep
+
+static/style.css
