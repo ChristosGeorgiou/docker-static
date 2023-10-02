@@ -7,7 +7,6 @@
     "start": "run-p dev:*",
     "dev:tailwind": "tailwind build -i ./styles/style.css -o ./static/style.css --watch",
     "dev:serve": "node .",
-    "start:prod": "node dist/main",
     "build": "run-s build:*",
     "build:tailwind": "tailwind build -i ./styles/style.css -o ./static/style.css"
   },

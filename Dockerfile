@@ -21,4 +21,4 @@ ENV APP_DIR=./app
 # HEALTHCHECK --interval=10s --timeout=10s --start-period=10s \
 #   CMD node dist/healthcheck.js http://localhost:3000/health/check
 
-CMD ["pnpm", "run", "start:prod"]
+CMD ["node", "."]
