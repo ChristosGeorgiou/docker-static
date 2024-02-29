@@ -1,6 +1,14 @@
-node_modules/
+node_modules
 
-.env*
-!.gitkeep
+.DS_Store
 
-static/style.css
+dist
+
+# Local Netlify folder
+.netlify
+
+.tmp
+
+src/_data/build.yml
+
+.env

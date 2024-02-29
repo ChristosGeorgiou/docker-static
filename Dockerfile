@@ -1,24 +1,25 @@
-FROM node:18-alpine
-
-RUN npm i -g pnpm
+FROM node as build
 
 WORKDIR /app
 
-EXPOSE 3000
+COPY package.json package-lock.json ./
 
-COPY package*.json ./
-COPY pnpm-lock.yaml ./
-
-RUN pnpm install
+RUN npm install
 
 COPY . .
 
-RUN pnpm run build
+RUN npm run build
 
-ENV NODE_ENV=production
-ENV APP_DIR=./app
+FROM alpine
 
-# HEALTHCHECK --interval=10s --timeout=10s --start-period=10s \
-#   CMD node dist/healthcheck.js http://localhost:3000/health/check
+RUN apk --no-cache add thttpd
 
-CMD ["node", "."]
+WORKDIR /var/www/http
+
+COPY --from=build /app/dist .
+
+EXPOSE 80
+
+ENTRYPOINT ["/usr/sbin/thttpd"]
+
+CMD ["-D",  "-l", "/dev/stderr", "-d", "/var/www/http"]
