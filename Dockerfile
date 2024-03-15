@@ -14,12 +14,11 @@ FROM alpine
 
 RUN apk --no-cache add thttpd
 
-WORKDIR /var/www/http
-
-COPY --from=build /app/dist .
+COPY scripts/set-env.sh /set-env.sh
+COPY --from=build /app/dist /var/www/http
 
 EXPOSE 80
 
-ENTRYPOINT ["/usr/sbin/thttpd"]
+ENTRYPOINT ["./set-env.sh","/var/www/http"]
 
-CMD ["-D",  "-l", "/dev/stderr", "-d", "/var/www/http"]
+CMD ["/usr/sbin/thttpd", "-D",  "-l", "/dev/stderr", "-d", "/var/www/http"]

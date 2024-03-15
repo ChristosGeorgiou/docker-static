@@ -1,8 +1,5 @@
 const pug = require("pug");
 const yaml = require("js-yaml");
-const dotenv = require("dotenv");
-
-dotenv.config();
 
 module.exports = function (eleventyConfig) {
 

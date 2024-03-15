@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+
+  landing:
+    container_name: landing
+    build: .
+    ports:
+      - 3000:80
+    env_file:
+      - .env
+    environment:
+      - NODE_ENV=production
