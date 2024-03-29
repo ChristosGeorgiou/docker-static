@@ -12,13 +12,13 @@ RUN npm run build
 
 FROM alpine
 
-RUN apk --no-cache add thttpd
+RUN apk --no-cache add thttpd perl
 
-COPY scripts/set-env.sh /set-env.sh
 COPY --from=build /app/dist /var/www/http
+COPY ./scripts/entrypoint.sh /entrypoint.sh
 
 EXPOSE 80
 
-ENTRYPOINT ["./set-env.sh","/var/www/http"]
+RUN chmod +x /entrypoint.sh
 
-CMD ["/usr/sbin/thttpd", "-D",  "-l", "/dev/stderr", "-d", "/var/www/http"]
+ENTRYPOINT ["./entrypoint.sh","/var/www/http","/usr/sbin/thttpd","-D","-l","/dev/stderr","-d","/var/www/http"]

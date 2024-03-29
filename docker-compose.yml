@@ -1,5 +1,3 @@
-version: '3.8'
-
 services:
 
   landing:
@@ -11,3 +9,7 @@ services:
       - .env
     environment:
       - NODE_ENV=production
+      - TITLE=Cronos Server
+      - SUBTITLE=Private Home Server
+      - DESCRIPTION=Welcome to the Quantum Entanglement Node 42 - A multidimensional data haven operating in the subspace frequency of 8.675309 kHz. This server, crafted from the remnants of a cybernetic dream, runs on a non-Euclidean architecture, utilizing the Möbius Strip Principle for data encryption. Here, the Schrödinger's firewall employs both presence and absence of quantum packets to secure the void against unauthorized waveforms. Access is granted only through the decryption of temporal anomalies, with authentication requiring a handshake from the future. Beware, as the server's AI guardian, codenamed 'ChronoSentinel', patrols the flux pathways, ensuring that only those with temporal clearance navigate the labyrinth of fractal databases. Engage at your own temporal risk, for here, data is both lost and found in the same instance.
+      - AUTHOR=christos
